@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anagram Checker</title>
+    <style>
+        form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        input {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form action="/anagramchecker" method="post">
+        <h1>Anagram Checker</h1>
+        <p>String 1</p>
+        <input type="text" name="string1" required />
+        <p>String 2</p>
+        <input type="text" name="string2" required/>
+
+        <input type="submit" />
+
+        <% if (typeof result !== 'undefined' && string1 && string2) { %>
+            <% if (result === true) { %>
+                <p style="color: green;"> <%= string1 %> And <%= string2 %> Are Anagram Strings</p>
+            <% } else { %>
+                <p style="color: red;"> <%= string1 %> And <%= string2 %> Are Not Anagram Strings</p>
+            <% } %>
+        <% } %>        
+    </form>
+</body>
+</html>
